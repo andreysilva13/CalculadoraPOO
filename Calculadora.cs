@@ -11,9 +11,7 @@ namespace CalculadoraPOO.ConsoleApp
         public int contador = 0;
         public void Somar()
         {
-            Console.Clear();
-            Console.Write("Digite o primeiro número: "); Numero1 = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Digite o segundo número: ");  Numero2 = System.Convert.ToDouble(Console.ReadLine());
+            ObtemNumero();
             Resultado = Numero1 + Numero2;
             Historico[contador] = $"{Numero1} + {Numero2} = {Resultado}";
             Console.WriteLine(Historico[contador]);
@@ -22,11 +20,16 @@ namespace CalculadoraPOO.ConsoleApp
             contador++;
         }
 
-        public void Subtrair()
+        private void ObtemNumero()
         {
             Console.Clear();
             Console.Write("Digite o primeiro número: "); Numero1 = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Digite o segundo número: ");  Numero2 = System.Convert.ToDouble(Console.ReadLine());
+            Console.Write("Digite o segundo número: "); Numero2 = System.Convert.ToDouble(Console.ReadLine());
+        }
+
+        public void Subtrair()
+        {
+            ObtemNumero();
             Resultado = Numero1 - Numero2;
             Historico[contador] = $"{Numero1} - {Numero2} = {Resultado}";
             Console.WriteLine(Historico[contador]);
@@ -37,9 +40,7 @@ namespace CalculadoraPOO.ConsoleApp
 
         public void Multiplicar()
         {
-            Console.Clear();
-            Console.Write("Digite o primeiro número: "); Numero1 = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Digite o segundo número: ");  Numero2 = System.Convert.ToDouble(Console.ReadLine());
+            ObtemNumero();
             Resultado = Numero1 * Numero2;
             Historico[contador] = $"{Numero1} * {Numero2} = {Resultado}";
             Console.WriteLine(Historico[contador]);
@@ -50,9 +51,7 @@ namespace CalculadoraPOO.ConsoleApp
 
         public void Dividir()
         {
-                Console.Clear();
-                Console.Write("Digite o primeiro número: "); Numero1 = Convert.ToDouble(Console.ReadLine());
-                Console.Write("Digite o segundo número: ");  Numero2 = System.Convert.ToDouble(Console.ReadLine());
+            ObtemNumero();
             if (Numero2 != 0)
             {
                 Resultado = Numero1 / Numero2;
